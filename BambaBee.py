@@ -1,28 +1,24 @@
 from os import walk
 import pygame
-import sys
 import glob
 
-#uses the glob module to create a list of all the 
-#files within the music directory
-f = glob.glob('./Music/*.mp3') 
+def generate_songlist():
+	#uses the glob module to create a list of all the 
+	#files within the music directory
+	songlist = glob.glob('./Music/*.mp3') 
+	return songlist
 
-#print f, type(f)
+songlist = generate_songlist()
+print songlist
 
-#initiates the mixer
+"""
 pygame.mixer.init()
-
-#loads all of the tracks from 'f' into the queue
-for efe in f:
-	pygame.mixer.music.load(efe)
-
-#begins to play the queue
+pygame.mixer.music.load('LaBamba.mp3')
 pygame.mixer.music.play()
-
-#when the queue runs out...exit.
 while pygame.mixer.music.get_busy() == True:
-	continue
+    continue
 else:
-	sys.exit()
+	pygame.mixer.quit()
+"""
 
-print pygame.mixer.music.get_queue()
+

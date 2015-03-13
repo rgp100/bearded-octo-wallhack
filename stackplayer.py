@@ -3,7 +3,7 @@ import pygame
 
 #all mp3's on the system will have their path in a file named mp3s.dat in the pwd
 def produceMP3file():
-	subprocess.call(["find ~ -name '*.mp3' >> mp3s.dat", ], shell=True)
+	subprocess.call(["find . -name '*.mp3' >> mp3s.dat", ], shell=True)
 	
 produceMP3file() #produces file mp3s.dat
 songlist = []
